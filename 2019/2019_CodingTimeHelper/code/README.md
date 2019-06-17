@@ -1,8 +1,8 @@
-#CodingTimeHelper
-##Demo
+# CodingTimeHelper
+## Demo
 ![demo](demo.gif)
 
-##Running the project
+## Running the project
 - Open it in VS Code
 - `npm install`
 - `npm run compile`

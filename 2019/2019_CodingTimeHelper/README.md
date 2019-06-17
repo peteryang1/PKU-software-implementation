@@ -1,6 +1,6 @@
-#Project name: CodingTimeHelper
+# Project name: CodingTimeHelper
 
-##Team member:
+## Team member:
 
 1. Chaoqun Wu	e-mail:chaoqun@pku.edu.cn
 
@@ -12,7 +12,7 @@
 
 5. Lei Zhang    e-mail:zl_sdu@163.com
 
-##Description:
+## Description:
 
 This project is a VSCode-Extension.
 
