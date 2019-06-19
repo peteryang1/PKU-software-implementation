@@ -1,0 +1,48 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="LostAndFound.userFound"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LostAndFound"
+    xmlns:data="using:LostAndFound.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="600" Height="600">
+
+    <Page.Resources>
+        <DataTemplate                        x:Key="ItemDataTemplate">
+            <ListViewItem x:ConnectionId='2' HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="580" Margin="5,10,5,10" FontFamily="Segoe UI" BorderBrush="#FF325E74" BorderThickness="4,4,4,4">
+                <Grid Width="540">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1.5*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:ConnectionId='3'                                   VerticalAlignment="Center" Grid.Column="0" Height="auto" FontSize="16" FontWeight="Bold"></TextBlock>
+                    <TextBlock x:ConnectionId='4'                                   VerticalAlignment="Center" Grid.Column="1" Height="auto" FontSize="14" FontWeight="Bold" />
+                    <TextBlock x:ConnectionId='5'                                            Grid.Column="2" Height="auto" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" />
+                </Grid>
+            </ListViewItem>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Image Source="Assets/zhaoling.png" Width="400" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+            <!--<Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Click="editPersonInfo">编辑</Button>-->
+        </Grid>
+        <Grid Grid.Row="1">
+            <GridView x:ConnectionId='6' x:Name="ItemGridView" Grid.Row="2" Background="White"
+                                                                    
+                                                     
+                      IsItemClickEnabled="True" 
+                      ItemTemplate="{StaticResource ItemDataTemplate}">
+            </GridView>
+        </Grid>
+
+    </Grid>
+</Page>
+
