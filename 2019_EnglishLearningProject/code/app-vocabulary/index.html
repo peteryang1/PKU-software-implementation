@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
+    <title>英语学习应用</title>
+    <link href="/src/css/animate.css" rel="stylesheet">
+    <link href="/src/css/bootstrap.css" rel="stylesheet">
+    <link href="/src/css/common.css" rel="stylesheet">
+    <link href="/src/css/iconfont.css" rel="stylesheet">
+    <link href="/src/css/vocabulary.css" rel="stylesheet">
+    <script>
+        window.mAlert = window.alert;
+        window.clientLog = function (obj) {
+            mAlert(obj.errMsg);
+        };
+        var serviceUrl = '/proxy/';
+        var projectServiceUrl = '';
+        var appId = '';
+        var webAppUrl = '';
+        var appName = 'app-vocabulary';
+        var defaultShareTitle = '我正在用英语学习应用! 你也快来试试!';
+        var defaultShareAvatar = '';
+        var supportRecord = true;
+        var routerConfig = {
+            routes: [
+                { url: 'home/{bookId}', page: 'home-page' },
+                { url: 'summary/{lessonId}', page: 'summary-page' },
+                { url: 'word', page: 'word-page' },
+                { url: 'wordlist/{lessonId}', page: 'wordlist-page' },
+            ]
+        };
+    </script>
+    <script>
+        var supportTestAccount = true;
+        var testAccountUsername = '';
+        var testAccountPassword = '';
+    </script>
+    <script src="../common/utils.js"></script>
+    <script src="../common/require.config.js"></script>
+    <script src="../lib/require.js"></script>
+</head>
+<body ontouchstart="">
+    <loading id="loading-component" params="type: type, show: show, msg: msg"></loading>
+    <messagebox id="messagebox-component"></messagebox>
+    <modeless id="modeless-component"></modeless>
+    <script type="text/html" id="null">
+    </script>
+    <script>
+        requirejs.config(requireConfig);
+        requirejs.onError = function (err) {
+            mAlert('RequireJS出错!\n版本号:9.9.213\n错误信息: ' + JSON.stringify(err));
+        };
+        window.onerror = function (messageOrEvent, source, lineno, colno, error) {
+            clientLog({
+                errMsg: "意外错误!\n版本号: 9.9.213\n错误信息: " + JSON.stringify(messageOrEvent) + '\n功能: ' + appName + '\n页面: ' + (app && app.query && app.query() ? app.query().page : '') + '\n文件: ' + source + '\n行: ' + lineno + '\n列: ' + colno + '\n错误: ' + error,
+            });
+        };
+        require(["startup"]);
+    </script>
+</body>
+</html>

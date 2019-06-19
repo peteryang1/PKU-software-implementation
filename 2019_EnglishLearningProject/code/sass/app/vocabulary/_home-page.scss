@@ -1,0 +1,52 @@
+﻿.chapter-row{
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    .title{
+        font-size: 1.4em;
+    }
+    .subtitle{
+        color: #777;
+    }
+}
+.chapter-item {
+    padding: 0px 4em;
+    .btn {
+        padding: .6em;
+    }
+    .chapter-star {
+        font-size: 25px;
+    }
+}
+.app-footer {
+    text-align: center;
+
+    .icon.icon-chevron-left {
+        @include inline-block;
+        @include transition(transform .2s ease-in-out);
+        /* Closed & Closing, chevron-down */
+        @include transform(rotate(-90deg));
+    }
+
+    &.collapsing[aria-expanded="true"],
+    &.collapse.in {
+        .icon.icon-chevron-left {
+            /* Opened & Opening, chevron-up */
+            @include transform(rotate(90deg));
+        }
+    }
+
+    &.collapse,
+    &.collapsing {
+        display: block;
+        height: auto !important;
+    }
+}
+.icon-chevron-left {
+    color: #fff;
+}
+.card {
+    a {
+        color: #000;
+    }
+}

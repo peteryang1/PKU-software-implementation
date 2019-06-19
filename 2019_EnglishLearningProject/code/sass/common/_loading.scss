@@ -1,0 +1,625 @@
+﻿@import "compass";
+
+.partial-loading {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #3498db;
+}
+
+#loading {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+}
+
+#loading-box {
+    text-align: center;
+    height: 18em;
+    width: 16em;
+}
+
+#loading-animation {
+    height: 6em;
+}
+
+#loading-box #loading-msg {
+    color: #fff;
+    font-size: 1em;
+    height: 4em;
+    display: block;
+    line-height: 1.5;
+}
+/* Square Spinner */
+.loading-square {
+    width: 5em;
+    height: 5em;
+    background-color: #fff;
+    margin: 5em auto;
+    @include animation(rotateplane 1.2s infinite ease-in-out);
+}
+
+@include keyframes(rotateplane) {
+    0% {
+        @include transform(perspective(10em));
+    }
+
+    50% {
+        @include transform(perspective(10em) rotateY(180deg));
+    }
+
+    100% {
+        @include transform(perspective(10em) rotateY(180deg) rotateX(180deg));
+    }
+}
+
+/* Square MSFT */
+.loading-square-msft {
+    width: 5.1em;
+    height: 5.1em;
+    margin: 5.1em auto;
+    @include animation(rotateplane 1.2s infinite ease-in-out);
+}
+
+.loading-square-msft-item1,
+.loading-square-msft-item2,
+.loading-square-msft-item3,
+.loading-square-msft-item4 {
+    width: 2.5em;
+    height: 2.5em;
+    background-color: #fff;
+    float: left;
+}
+
+.loading-square-msft-item1 {
+    margin-right: .1em;
+    margin-bottom: .1em;
+}
+
+.loading-square-msft-item2 {
+    margin-bottom: .1em;
+}
+
+.loading-square-msft-item3 {
+    margin-right: .1em;
+}
+
+/* Double Bounce Spinner */
+.loading-double-bounce {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.loading-double-bounce .double-bounce1, .loading-double-bounce .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    @include border-radius(50%);
+    background-color: #fff;
+    @include opacity(0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include animation(bounce 2.0s infinite ease-in-out);
+}
+
+.loading-double-bounce .double-bounce2 {
+    @include animation-delay(-1.0s);
+}
+
+@include keyframes(bounce) {
+    0%, 100% {
+        @include transform(scale(0.0));
+    }
+
+    50% {
+        @include transform(scale(1.0));
+    }
+}
+
+/* Rect Spinner */
+.loading-rect {
+    margin: 50px auto;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.loading-rect > div {
+    background-color: #fff;
+    height: 100%;
+    width: 12px;
+    @include inline-block;
+    @include animation(stretchdelay 1.2s infinite ease-in-out);
+}
+
+.loading-rect .rect2 {
+    @include animation-delay(-1.1s);
+}
+
+.loading-rect .rect3 {
+    @include animation-delay(-1.0s);
+}
+
+.loading-rect .rect4 {
+    @include animation-delay(-0.9s);
+}
+
+.loading-rect .rect5 {
+    @include animation-delay(-0.8s);
+}
+
+@include keyframes(stretchdelay) {
+    0%, 40%, 100% {
+        @include transform(scaleY(0.4));
+    }
+
+    20% {
+        @include transform(scaleY(1.0));
+    }
+}
+
+/* Cube Spinner */
+.loading-cube {
+    margin: 50px auto;
+    width: 64px;
+    height: 64px;
+    position: relative;
+}
+
+.loading-cube .cube1, .loading-cube .cube2 {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include animation(cubemove 1.8s infinite ease-in-out);
+}
+
+.loading-cube .cube2 {
+    @include animation-delay(-0.9s);
+}
+
+@include keyframes(cubemove) {
+    25% {
+        @include transform(translateX(42px) rotate(-90deg) scale(0.5));
+    }
+
+    50% {
+        @include transform(translateX(42px) translateY(42px) rotate(-179deg));
+    }
+
+    50.1% {
+        @include transform(translateX(42px) translateY(42px) rotate(-180deg));
+    }
+
+    75% {
+        @include transform(translateX(0px) translateY(42px) rotate(-270deg) scale(0.5));
+    }
+
+    100% {
+        @include transform(rotate(-360deg));
+    }
+}
+
+/* Drip Spinner */
+.loading-drip {
+    width: 5em;
+    height: 5em;
+    margin: 0 auto;
+    background-color: #fff;
+    @include border-radius(100%);
+    @include animation(scaleout 1.0s infinite ease-in-out);
+}
+
+@include keyframes(scaleout) {
+    0% {
+        @include transform(scale(0.0));
+    }
+
+    100% {
+        @include transform(scale(1.0));
+        @include opacity(0);
+    }
+}
+
+/* Dot Spinner */
+.loading-dot {
+    margin: 50px auto;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    text-align: center;
+    @include animation(rotate 2.0s infinite linear);
+}
+
+.loading-dot .dot1, .loading-dot .dot2 {
+    width: 40%;
+    height: 40%;
+    @include inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    @include border-radius(100%);
+}
+
+.loading-dot .dot2 {
+    top: auto;
+    bottom: 0;
+    @include animation-delay(-1.0s);
+}
+
+@include keyframes(rotate) {
+    100% {
+        @include transform(rotate(360deg));
+    }
+}
+
+@include keyframes(bounce) {
+    0%, 100% {
+        @include transform(scale(0.0));
+    }
+
+    50% {
+        @include transform(scale(1.0));
+    }
+}
+/* Ellipsis Spinner*/
+.loading-ellipsis {
+    margin: 50px auto;
+    width: 70px;
+    text-align: center;
+}
+
+.loading-ellipsis > div {
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    @include border-radius(100%);
+    @include inline-block;
+    /* Prevent first frame from flickering when animation starts */
+    @include animation-fill-mode(both);
+}
+
+.loading-ellipsis .bounce1 {
+    @include animation-delay(-0.32s);
+}
+
+.loading-ellipsis .bounce2 {
+    @include animation-delay(-0.16s);
+}
+
+@include keyframes(bouncedelay) {
+    0%, 80%, 100% {
+        @include transform(scale(0.0));
+    }
+
+    40% {
+        @include transform(scale(1.0));
+    }
+}
+
+/* Circle Spinner */
+.loading-circle {
+    margin: 50px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.loading-circle .container1 > div,
+.loading-circle .container2 > div,
+.loading-circle .container3 > div {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    @include border-radius(100%);
+    position: absolute;
+    /* Prevent first frame from flickering when animation starts */
+    @include animation-fill-mode(both);
+}
+
+.loading-circle .spinner-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.loading-circle .container2 {
+    @include transform(rotateZ(45deg));
+}
+
+.loading-circle .container3 {
+    @include transform(rotateZ(90deg));
+}
+
+.loading-circle .circle1 {
+    top: 0;
+    left: 0;
+}
+
+.loading-circle .circle2 {
+    top: 0;
+    right: 0;
+}
+
+.loading-circle .circle3 {
+    right: 0;
+    bottom: 0;
+}
+
+.loading-circle .circle4 {
+    left: 0;
+    bottom: 0;
+}
+
+.loading-circle .container2 .circle1 {
+    @include animation-delay(-1.1s);
+}
+
+.loading-circle .container3 .circle1 {
+    @include animation-delay(-1.0s);
+}
+
+.loading-circle .container1 .circle2 {
+    @include animation-delay(-0.9s);
+}
+
+.loading-circle .container2 .circle2 {
+    @include animation-delay(-0.8s);
+}
+
+.loading-circle .container3 .circle2 {
+    @include animation-delay(-0.7s);
+}
+
+.loading-circle .container1 .circle3 {
+    @include animation-delay(-0.6s);
+}
+
+.loading-circle .container2 .circle3 {
+    @include animation-delay(-0.5s);
+}
+
+.loading-circle .container3 .circle3 {
+    @include animation-delay(-0.4s);
+}
+
+.loading-circle .container1 .circle4 {
+    @include animation-delay(-0.3s);
+}
+
+.loading-circle .container2 .circle4 {
+    @include animation-delay(-0.2s);
+}
+
+.loading-circle .container3 .circle4 {
+    @include animation-delay(-0.1s);
+}
+
+.loading-circle .container3 {
+    @include transform(rotateZ(90deg));
+}
+
+.loading-circle .circle1 {
+    top: 0;
+    left: 0;
+}
+
+.loading-circle .circle2 {
+    top: 0;
+    right: 0;
+}
+
+.loading-circle .circle3 {
+    right: 0;
+    bottom: 0;
+}
+
+.loading-circle .circle4 {
+    left: 0;
+    bottom: 0;
+}
+
+.loading-circle .container2 .circle1 {
+    @include animation-delay(-1.1s);
+}
+
+.loading-circle .container3 .circle1 {
+    @include animation-delay(-1.0s);
+}
+
+.loading-circle .container1 .circle2 {
+    @include animation-delay(-0.9s);
+}
+
+.loading-circle .container2 .circle2 {
+    @include animation-delay(-0.8s);
+}
+
+.loading-circle .container3 .circle2 {
+    @include animation-delay(-0.7s);
+}
+
+.loading-circle .container1 .circle3 {
+    @include animation-delay(-0.6s);
+}
+
+.loading-circle .container2 .circle3 {
+    @include animation-delay(-0.5s);
+}
+
+.loading-circle .container3 .circle3 {
+    @include animation-delay(-0.4s);
+}
+
+.loading-circle .container1 .circle4 {
+    @include animation-delay(-0.3s);
+}
+
+.loading-circle .container2 .circle4 {
+    @include animation-delay(-0.2s);
+}
+
+.loading-circle .container3 .circle4 {
+    @include animation-delay(-0.1s);
+}
+
+@include keyframes(bouncedelay) {
+    0%, 80%, 100% {
+        @include transform(scale(0.0));
+    }
+
+    40% {
+        @include transform(scale(1.0));
+    }
+}
+
+/*
+    Folding Cube
+*/
+.loading-folding-cube {
+    margin: 5em auto;
+    width: 5em;
+    height: 5em;
+    position: relative;
+    @include transform(rotateZ(45deg));
+}
+
+.loading-folding-cube .loading-folding-cube-item {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    @include transform(scale(1.1));
+}
+
+.loading-folding-cube .loading-folding-cube-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    @include animation(loadingFoldingCubeAngle 2.4s infinite linear both);
+    @include transform-origin(100% 100%);
+}
+
+.loading-folding-cube .loading-folding-cube-item2 {
+    @include transform(scale(1.1) rotateZ(90deg));
+}
+
+.loading-folding-cube .loading-folding-cube-item3 {
+    @include transform(scale(1.1) rotateZ(180deg));
+}
+
+.loading-folding-cube .loading-folding-cube-item4 {
+    @include transform(scale(1.1) rotateZ(270deg));
+}
+
+.loading-folding-cube .loading-folding-cube-item2:before {
+    @include animation-delay(0.3s);
+}
+
+.loading-folding-cube .loading-folding-cube-item3:before {
+    @include animation-delay(0.6s);
+}
+
+.loading-folding-cube .loading-folding-cube-item4:before {
+    @include animation-delay(0.9s);
+}
+
+@include keyframes(loadingFoldingCubeAngle) {
+    0%, 10% {
+        @include transform(perspective(10em) rotateX(-180deg));
+        @include opacity(0);
+    }
+
+    25%, 75% {
+        @include transform(perspective(10em) rotateX(0deg));
+        @include opacity(1);
+    }
+
+    90%, 100% {
+        @include transform(perspective(10em) rotateY(180deg));
+        @include opacity(0);
+    }
+}
+/*
+    MSFT
+*/
+.loading-msft {
+    margin: 5em auto;
+    width: 6em;
+    height: 6em;
+    position: relative;
+}
+
+.loading-msft .loading-msft-item {
+    float: left;
+    width: 2.5em;
+    height: 2.5em;
+    margin: .2em;
+    position: relative;
+    @include transform(scale(1.1));
+}
+
+.loading-msft .loading-msft-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    @include animation(loadingMSFTAngel 2.4s infinite linear both);
+    @include transform-origin(100% 100%);
+}
+
+.loading-msft .loading-msft-item2 {
+    @include transform(scale(1.1) rotateZ(90deg));
+}
+
+.loading-msft .loading-msft-item3 {
+    @include transform(scale(1.1) rotateZ(180deg));
+}
+
+.loading-msft .loading-msft-item4 {
+    @include transform(scale(1.1) rotateZ(270deg));
+}
+
+.loading-msft .loading-msft-item2:before {
+    @include animation-delay(0.3s);
+}
+
+.loading-msft .loading-msft-item3:before {
+    @include animation-delay(0.6s);
+}
+
+.loading-msft .loading-msft-item4:before {
+    @include animation-delay(0.9s);
+}
+
+@include keyframes(loadingMSFTAngel) {
+    0%, 10% {
+        @include transform(perspective(10em) rotateX(-180deg));
+        @include opacity(0);
+    }
+
+    25%, 75% {
+        @include transform(perspective(10em) rotateX(0deg));
+        @include opacity(1);
+    }
+
+    90%, 100% {
+        @include transform(perspective(10em) rotateY(180deg));
+        @include opacity(0);
+    }
+}

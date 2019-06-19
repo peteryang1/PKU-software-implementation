@@ -1,0 +1,148 @@
+@font-face {
+    font-family: "iconfont";
+    src: url('/Resource/fonts/iconfont.eot?t=1560390768');
+    src: url('/Resource/fonts/iconfont.eot?t=1560390768#iefix') format('eot'),
+        url('/Resource/fonts/iconfont.woff2?t=1560390768') format('woff2'),
+        url('/Resource/fonts/iconfont.woff?t=1560390768') format('woff'),
+        url('/Resource/fonts/iconfont.ttf?t=1560390768') format('truetype'),
+        url('/Resource/fonts/iconfont.svg?t=1560390768#iconfont') format('svg');
+}
+
+.icon {
+    display: inline-block;
+    text-rendering: auto;
+    font-size: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon:before {
+    font-family: "iconfont";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    /* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+    text-decoration: none;
+    text-transform: none;
+    vertical-align: bottom;
+}
+
+
+.icon-Junior-high-school:before {
+    content: "\EA01";
+}
+
+.icon-audio:before {
+    content: "\EA02";
+}
+
+.icon-badge:before {
+    content: "\EA03";
+}
+
+.icon-chevron-left:before {
+    content: "\EA04";
+}
+
+.icon-chevron-right:before {
+    content: "\EA05";
+}
+
+.icon-high-school:before {
+    content: "\EA06";
+}
+
+.icon-list-o:before {
+    content: "\EA07";
+}
+
+.icon-pause:before {
+    content: "\EA08";
+}
+
+.icon-play:before {
+    content: "\EA09";
+}
+
+.icon-position:before {
+    content: "\EA0A";
+}
+
+.icon-primary-school:before {
+    content: "\EA0B";
+}
+
+.icon-record-loading:before {
+    content: "\EA0C";
+}
+
+.icon-record:before {
+    content: "\EA0D";
+}
+
+.icon-right:before {
+    content: "\EA0E";
+}
+
+.icon-star:before {
+    content: "\EA0F";
+}
+
+.icon-stop:before {
+    content: "\EA10";
+}
+
+.icon-up:before {
+    content: "\EA11";
+}
+
+.icon-wrong:before {
+    content: "\EA12";
+}
+
+.icon-xiangshangjiantouarrowup1-copy:before {
+    content: "\EA13";
+}
+
+
+.icon-spin {
+  -webkit-animation: icon-spin 2s infinite linear;
+  animation: icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.icon-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.icon-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+}

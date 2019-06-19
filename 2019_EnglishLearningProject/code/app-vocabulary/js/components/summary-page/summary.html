@@ -1,0 +1,44 @@
+﻿<div class="navbar navbar-green navbar-mobile navbar-fixed-top" role="navigation">
+    <div class="navbar-header container">
+        <div class="navbar-btn-left-col">
+            <a class="btn navbar-btn btn-default" data-bind="attr:{href:'#home/'+vocabularyBookId()}">
+                <span class="icon icon-chevron-left"></span>
+            </a>
+        </div>
+        <h1 class="navbar-title">单词记忆</h1>
+    </div>
+</div>
+
+<div class="page active with-header home-page">
+    <div class="home-content container">
+        <div class="home-card">
+            <!-- ko with: summary -->
+            <h1 class="home-title" data-bind="text: headline()"></h1>
+            <h3 class="home-subtitle" data-bind="text: name()"></h3>
+            <div class="home-today-wrapper">
+                <canvas id="home-today" class="vertical-center-absolute"></canvas>
+                <div class="home-today-data vertical-center-absolute horizontal-center-absolute">
+                    <div>本章已认识</div>
+                    <div class="home-today-finished" data-bind="text: learnedCount()"></div>
+                    <div>个单词</div>
+                </div>
+            </div>
+            <!-- /ko -->
+            <div class="home-stats">
+                <div class="home-links">
+                    <a class="btn" data-bind="attr:{href:wordlistId}"><span class="icon icon-list-o"></span><span>单词列表</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer footer-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-btn">
+                <a class="btn btn-rounded btn-fat btn-blue btn-block btn-embossed" data-bind="attr: {href: '#word'}">继续修炼</a>
+            </div>
+        </div>
+    </div>
+</footer>

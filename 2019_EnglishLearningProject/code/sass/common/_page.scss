@@ -1,0 +1,34 @@
+﻿@import "compass";
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .page, .page-container {
+        height: 100%;
+        width: 100%;
+        display: none;
+        overflow: hidden; 
+        @include animation-duration(.5s !important);
+    }
+
+    .page.active {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .page-container.active,
+    .page-container.animated,
+    .page.active,
+    .page.animated {
+        display: block;
+    }
+
+    .page {
+    }
+
+    .page-container.animated, .page.animated {
+        position: absolute; 
+        top: 0;
+    }
+}

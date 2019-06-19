@@ -1,0 +1,91 @@
+﻿@import "../_base.scss";
+@import "_override-bootstrap.scss";
+@import "_page.scss";
+@import "_button.scss";
+@import "_loading.scss";
+@import "_utillity.scss";
+@import "_navbar-mobile.scss";
+@import "_modeless.scss";
+@import "_messagebox.scss";
+@import "_share-page.scss";
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    @include min-width(300px);
+    @include text-shadow(none);
+    background-color: $default-gray;
+}
+
+.footer {
+    padding: 1em 0;
+}
+
+:not(textarea):not(input) {
+    -webkit-touch-callout: none !important;
+    @include user-select(none);
+}
+
+.progress,
+.progress-bar {
+    @include border-radius(1em);
+    @include box-shadow(none);
+}
+
+.progress {
+    background-color: #E1E1E1;
+}
+
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: 13px !important;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    body {
+        font-size: 16px !important;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1280px) {
+
+    body {
+        font-size: 30px !important;
+    }
+}
+
+@media only screen and (min-width: 1281px) {
+    body {
+        font-size: 40px !important;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .landscape-curtain {
+        display: none;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .landscape-curtain {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        background-color: #000;
+        text-align: center;
+        color: #fff;
+        font-size: 2em;
+
+        &.disabled {
+            display: none !important;
+        }
+    }
+}

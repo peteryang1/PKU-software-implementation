@@ -1,0 +1,135 @@
+﻿@import "compass";
+
+.navbar-mobile {
+    height: 3.2em;
+    @include min-width(300px);
+
+    &.navbar-default {
+        background-color: rgba(248, 248, 248, .8);
+    }
+
+    .navbar-nav {
+        margin: 0 -15px;
+    }
+
+    .btn.navbar-btn {
+        padding: .5em 1em;
+        margin: 0;
+        @include border-radius(0);
+
+        .icon {
+            font-size: 1.5em;
+        }
+    }
+
+    .navbar-toggle {
+        margin: .3em 0;
+        padding: .7em;
+    }
+
+    .navbar-btn-left-col {
+        left: 0;
+    }
+
+    .navbar-btn-right-col {
+        right: 0;
+    }
+
+    .navbar-btn-right .glyphicon {
+        margin-left: .2em;
+    }
+
+    .navbar-btn-left-col,
+    .navbar-btn-right-col {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+    }
+
+    .navbar-header {
+        height: 100%;
+        width: 100%;
+    }
+
+    .navbar-title {
+        font-size: 1.2em;
+        text-align: center;
+        display: block;
+        @include ellipsis;
+        overflow: hidden;
+        @include nowrap;
+        outline: 0 !important;
+        @include user-select(none);
+        color: #fff;
+        margin: 0;
+        font-weight: 400;
+        position: relative;
+        top: 50%;
+        @include transform(translateY(-50%));
+        pointer-events: none;
+    }
+
+    .navbar-btn.btn-default,
+    .navbar-btn.btn-default:active {
+        border: 0;
+        background-color: transparent;
+        color: $default-text-gray;
+        @include box-shadow(none);
+    }
+
+    .navbar-mid-col {
+        @extend .vertical-center;
+        padding: 0 3em;
+    }
+
+    .navbar-mid-col.extend-right {
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-mobile {
+
+        .navbar-header {
+            float: none;
+            position: relative;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .navbar-right {
+            float: none !important;
+        }
+
+        .navbar-nav > li {
+            float: none;
+        }
+
+        .navbar-toggle {
+            display: block;
+        }
+
+        .nav {
+            float: none;
+            margin: 0;
+        }
+
+        .navbar-collapse.collapse {
+            display: none !important;
+        }
+
+        .navbar-collapse.collapse.in {
+            display: block !important;
+        }
+    }
+}
+
+.with-header {
+    padding-top: 3.5em;
+}
+
+@media only screen and (max-width: 320px) {
+    .with-header {
+        padding-top: 4em;
+    }
+}
