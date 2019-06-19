@@ -1,0 +1,92 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.9",
+	"appid": "wxe8c7de134561a7d8",
+	"projectname": "%E7%9C%8B%E5%B1%95%E5%B0%8F%E6%9E%AB",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "书架",
+					"pathName": "pages/bookStore/bookStore",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "会展",
+					"pathName": "pages/bookCity/bookCity",
+					"query": "id=3"
+				},
+				{
+					"id": 2,
+					"name": "简介",
+					"pathName": "pages/bookAbstract/bookAbstract",
+					"query": "id=3"
+				},
+				{
+					"id": 3,
+					"name": "章节",
+					"pathName": "pages/chapterDetail/chapterDetail",
+					"query": "bookid=1&chapterid=1"
+				},
+				{
+					"id": -1,
+					"name": "免费书籍",
+					"pathName": "pages/freeBooks/freeBooks",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的书架",
+					"pathName": "pages/bookStore/bookStore",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,9 @@
+<include src="../../views/sideSliderView/sideSliderView.wxml" />
+<view class="page-top {{open ? ['c-state','cover'] : ''}} ">
+
+
+<cover-view class="black_cover_screen" bindtap="black_cover_tap" wx:if="{{open}}"></cover-view>
+
+
+  <include src="../../views/qqMapView/qqMapView.wxml" />
+</view>

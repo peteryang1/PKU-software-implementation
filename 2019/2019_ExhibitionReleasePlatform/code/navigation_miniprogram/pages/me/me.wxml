@@ -1,0 +1,46 @@
+<!--pages/me/me.wxml-->
+
+<!--
+<view class="user">
+  <view class="userInfo" style="background-image: url({{urlImg+'userBackground.png'}})">
+    <view class="userAvatr">
+      <image class="avator"src="../../images/avator.png"/>
+      <view class="userName">user</view>
+      <image class="toEdit" src="../../images/blur_right.png"/>
+    </view>
+  </view>
+  <view class="userBody">
+    <view class="userLi" bindtap='toUserCollect'>
+      <image class="liLogo" src="../../images/bookList.png" />
+      <text>我的收藏</text>
+      <image class="rightImg" src="../../images/blur_right.png" />
+    </view>
+  
+  </view>
+</view>
+-->
+
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="user">
+    <view class="user-header" style='background-color:rgba(0, 150, 136, 1.0)'>
+      <view class="user-header-cont">
+        <view class="user-header-avatar">
+          <open-data class="" lang="zh_CN" type="userAvatarUrl"></open-data>
+        </view>
+        <open-data class="user-header-cont-name" lang="zh_CN" type="userNickName"></open-data>
+      </view>
+    </view>
+  </view>
+  <!-- 订单入口 -->
+ 
+
+    <view class="userBody">
+    <view class="userLi" bindtap='toUserCollect'>
+      <image class="liLogo" src="../../images/bookList.png" />
+      <text>我的收藏</text>
+      <image class="rightImg" src="../../images/blur_right.png" />
+    </view>
+    </view>
+
+</view>

@@ -1,0 +1,19 @@
+<view class="freeBooks">
+  <view class="freeLi" wx:for="{{freeBookList}}" wx:key="{{index}}" data-id="{{item.id}}">
+    <image mode="aspectFill" class="freeImg" src="{{urlImg + item.activity_image_name}}" />
+    <view class="freeInfo">
+      <view class="bookName">活动名：{{item.activity_name}}</view>
+      <view class="category">活动类型：{{item.activity_type}}</view>
+      <view class="author">地点：{{item.activity_location}}</view>
+      <view class="status">状态：{{item.state}}</view>
+      
+    </view>
+  </view>
+  <view>
+    <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class='reachBottom' wx:if="{{noData}}">我还是有底线的～</view>
+  </view>
+</view>
