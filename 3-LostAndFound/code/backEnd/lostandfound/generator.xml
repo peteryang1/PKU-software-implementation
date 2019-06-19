@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <!-- 本地数据库驱动程序jar包的全路径 （这个jar包可以在网上下载，本文最后也有地址，需要自行修改！！！！） -->
+    <classPathEntry location="F:\projects\eclipse\javajdbc\sqljdbc42.jar"/>
+
+    <context id="DBTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <!-- 数据库的相关配置（需要自行修改！！！！） -->
+        <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                        connectionURL="jdbc:sqlserver://lostandfoundsqlserver2.database.chinacloudapi.cn:1433;DatabaseName=LFDB"
+                        userId="zhimake"
+                        password="lost123-"/>
+
+        <!-- 指定实体类生成的位置（如果读者在新建工程时包名和我不一样需要自行修改！！！！） -->
+        <javaModelGenerator targetPackage="com.example.lostandfound.model" targetProject="src\main\java\">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+
+        <!-- 指定生成Mapper.xml 文件的位置 （如果读者在新建工程时包名和我不一样需要自行修改！！！！）-->
+        <sqlMapGenerator targetPackage="com.example.lostandfound.mapper" targetProject="src\main\java\">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- 指定生成Mapper接口文件的位置 （如果读者在新建工程时包名和我不一样需要自行修改！！！！）-->
+        <javaClientGenerator targetPackage="com.example.lostandfound.mapper" targetProject="src\main\java\" type="XMLMAPPER">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!-- 相关表的配置 -->
+        <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名，两个名字是和数据库对应的-->
+        <table tableName="UserTable"
+               domainObjectName="UserTable"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false" />
+        <table tableName="Item"
+               domainObjectName="Item"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false" />
+        <table tableName="Collection"
+               domainObjectName="Collection"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false" />
+        <table tableName="Message"
+               domainObjectName="Message"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false" />
+        <table tableName="Picture"
+               domainObjectName="Picture"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false" />
+    </context>
+</generatorConfiguration>

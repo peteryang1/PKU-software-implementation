@@ -1,0 +1,117 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="LostAndFound.userInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LostAndFound"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data ="using:LostAndFound.Models"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Image Source="Assets/geren.png" Width="400" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Image>
+            <!--<Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Click="editPersonInfo">编辑</Button>-->
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Ellipse Grid.Row="1" Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Assets/portrait.jpg" ></ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock x:ConnectionId='2' Style="{StaticResource SubtitleTextBlockStyle}" VerticalAlignment="Center"                         ></TextBlock>
+
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}" Foreground="LightGray">电话：</TextBlock>
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}"  Foreground="LightGray">17801066509</TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24">信用</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <FontIcon  Grid.Column="1" Glyph="&#xE1CF;" HorizontalAlignment="Center" />
+               
+               
+            </Grid>
+        </Grid>
+
+
+        <Grid Grid.Row="3" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24">积分</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <FontIcon Grid.Column="1"  Glyph="&#xE14E;" HorizontalAlignment="Center"></FontIcon>
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Row="4" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24">地区</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">上海</TextBlock>
+            </Grid>
+
+
+        </Grid>
+        <Grid Grid.Row="5" BorderThickness="0,0,0,1" BorderBrush="#EEEEEE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Button>修改个人信息</Button>
+            </Grid>
+
+        </Grid>
+
+        <!--<GridView ItemsSource="{x:Bind UserInfos}">
+            <GridView.ItemTemplate>
+            <DataTemplate x:DataType="data:UserInfo">
+            <StackPanel>
+                <TextBlock Text="{x:Bind phonenumber}"/>
+                    <TextBlock Text="{x:Bind credit}"/>
+
+                </StackPanel>
+        </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>-->
+
+
+
+
+    </Grid>
+</Page>
+

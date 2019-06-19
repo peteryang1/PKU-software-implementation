@@ -1,0 +1,57 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="LostAndFound.sendMsg"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LostAndFound"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="800" Height="600">
+
+    <Grid BorderBrush="#FF0E5F0E" BorderThickness="1,1,1,1" Background="#FFF1F7F9" Height="600" Width="800" MinHeight="600" MaxHeight="600" MinWidth="800" MaxWidth="800">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="6*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="Assets/logo4.png" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Stretch"></Image>
+                <Button x:ConnectionId='6' Content="返回" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="92,0,0,0" VerticalAlignment="Center" Background="#FF325E74" Foreground="White"                       ></Button>
+                <TextBlock x:ConnectionId='7' Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34" Text="添加评论" Name="title" FontFamily="Segoe UI"></TextBlock>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock x:ConnectionId='5' HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="34"                            FontFamily="Segoe UI"></TextBlock>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0">发给：</TextBlock>
+            <TextBlock x:ConnectionId='4' Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0"                                    ></TextBlock>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="30" Margin="0,32,0,0">评论：</TextBlock>
+            <ScrollViewer Grid.Column="1" Width="400" Height="auto" HorizontalAlignment="Left" MaxHeight="200">
+                <TextBox x:ConnectionId='3' x:Name="CommentContent" TextWrapping="Wrap" FontSize="24" AcceptsReturn="True"></TextBox>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Button x:ConnectionId='2' Content="发布评论" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF982D41" Foreground="White"                         Margin="343,-1,0,0"/>
+        </Grid>
+    </Grid>
+</Page>
+
