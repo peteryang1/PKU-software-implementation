@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bookStore/bookStore",
+    "pages/me/me",
+    "pages/bookCity/bookCity",
+    "pages/bookAbstract/bookAbstract",
+    "pages/chapterDetail/chapterDetail",
+    "pages/freeBooks/freeBooks",
+    "pages/search/search",
+    "pages/mainMap/mainMap",
+    "pages/newests/newests",
+    "pages/D3web-view/d3web-view",
+    "pages/acti-list/acti-list",
+    "pages/wx-parse/wx-parse",
+    "pages/allExhibitions/allExhibitions",
+    "pages/allGraduations/allGraduations"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "看展小枫",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#009688",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "images/find.png",
+        "selectedIconPath": "images/find_select.png"
+      },
+      {
+        "pagePath": "pages/bookCity/bookCity",
+        "text": "会展中心",
+        "iconPath": "images/books.png",
+        "selectedIconPath": "images/books_select.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_select.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 60000
+  },
+  "sitemapLocation": "sitemap.json"
+
+}

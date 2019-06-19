@@ -1,0 +1,2 @@
+<map id="map" wx:if="{{mapOn}}" longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}" scale="18" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" circles="{{circles}}" polyline="{{polyline}}" polygons="{{polygons}}"
+  enable-rotate="true" show-location style="width: 100%; height: 100vh" show-compass></map>

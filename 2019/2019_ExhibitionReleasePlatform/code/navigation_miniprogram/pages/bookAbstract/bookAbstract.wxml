@@ -1,0 +1,24 @@
+<!--pages/bookAbstract/bookAbstract.wxml-->
+<view class="abstract">
+  <view class="abstractHead">
+    <image mode="aspectFill" class="bookImg" src="{{urlImg+abstractAll.project_image_name}}"/>
+    <view class="bookInfo">
+      <view class="bookName">{{abstractAll.project_name}}</view>
+      <view class="category"> 分类：<view class="categoryText">{{abstractAll.project_type}}</view></view>
+      <view class="author">主办方：{{abstractAll.project_host}}</view>
+      <view class="author">举办地：{{abstractAll.project_location}}</view>
+      <view class="createTimt">起止时间：{{abstractAll.project_time1}} - {{abstractAll.project_time2}}</view>
+      <view class="status">状态: {{abstractAll.state}}</view>
+    </view>
+  </view>
+  <view class="buttonList">
+    <view class="buttonLi addStore" bindtap='addStore' hidden='{{abstractAll.collect || isSelect}}'>加入收藏</view>
+    <view wx:if="{{abstractAll.collect || isSelect}}" class="buttonLi isStore">已收藏</view>
+    <view class="buttonLi beginLook" data-id="{{id}}" bindtap='beginRead'>进入项目</view>
+  </view>
+  <view class="stractBody">
+    <view class="title">项目简介：</view>
+    <view class="content">{{abstractAll.project_introduction}}</view>
+  </view>
+  
+</view>
