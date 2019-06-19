@@ -1,0 +1,178 @@
+﻿@import "compass";
+
+.home-page {
+    padding-bottom: 5.5em;
+}
+
+.home-new-user-content {
+    padding: 1em;
+}
+
+.home-new-user-msg {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.home-new-user-img {
+    width: 100%;
+}
+
+.home-title {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 600;
+    white-space: pre-line;
+}
+
+.home-subtitle {
+    color: #a3a3a3;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    white-space: pre-line;
+}
+
+.home-content {
+    padding: 0 1em;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    min-height: 345px;
+}
+
+#home-welcome-title {
+    font-size: 2.5em;
+    font-weight: lighter;
+}
+
+#home-avatar {
+    height: 4em;
+    width: 4em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+#home-username {
+    font-size: 1em;
+}
+
+#home-summary {
+    border: solid 1px #dfdfdf;
+    margin: 0 5%;
+    height: 250px;
+    padding: 20px;
+}
+
+#home-info-board {
+    height: 100%;
+}
+
+.home-today-wrapper {
+    position: absolute;
+    left: 10%;
+    top: 5em;
+    bottom: 5em;
+    width: 80%;
+    padding: .5em;
+}
+
+.home-page .footer {
+    padding: 1em 0;
+
+    .btn {
+        position: relative;
+
+        .badge {
+            position: absolute;
+            right: 1em;
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+    }
+}
+
+#home-today {
+    width: 100%;
+    height: 100%;
+}
+
+.home-button-col {
+    padding: 40px 20px;
+}
+
+.home-progress {
+    color: #58b764;
+    font-size: 1.1em;
+
+    a {
+        padding: .5em; /* To increase the hit area */
+    }
+}
+
+.home-today-data {
+    width: 8em;
+    height: 8em;
+    text-align: center;
+    color: #A4A4A4;
+}
+
+.home-today-finished {
+    font-size: 4em;
+    font-weight: bold;
+    color: #000;
+}
+
+.home-today-finished,
+.home-total-finished {
+    color: $green;
+}
+
+.home-card {
+    @extend .card;
+    height: 100%;
+}
+
+.home-stats {
+    position: absolute;
+    bottom: 2em;
+    width: 100%;
+    left: 0;
+    padding: 0 1em;
+}
+
+.home-links {
+    text-align: center;
+    margin-top: 1em;
+
+    a {
+        color: $default-text-gray;
+
+        &:active {
+            background: #F2F2F2;
+            box-shadow: none;
+        }
+        .icon.icon-list-o{
+            color:$green;
+            padding-right:2px;
+        }
+    }
+}
+
+.privacy-footer-content {
+    @include display_flex;
+
+    div {
+        @include flex(1);
+        text-align: center;
+        padding: .5em 0;
+    }
+}
+
+.icon-chevron-left {
+    color: #fff;
+}
+.vocabHyphen{
+    white-space: nowrap;
+}

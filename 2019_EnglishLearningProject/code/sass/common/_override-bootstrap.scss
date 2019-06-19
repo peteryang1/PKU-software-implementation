@@ -1,0 +1,198 @@
+﻿@import "compass";
+
+.header {
+    background-color: #ecf0f1 !important;
+    border-bottom: 0 !important;
+    @include opacity(0.9);
+    font-size: inherit !important;
+}
+
+.header .header-title {
+    display: block;
+    font-size: 1em;
+    margin: 0 30%;
+    min-height: 1.1em;
+    outline: 0 none !important;
+    overflow: hidden;
+    padding: 0.7em 0;
+    text-align: center;
+    @include ellipsis;
+    @include nowrap;
+}
+
+footer,
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    font-size: 1em;
+    z-index: 5000;
+}
+
+.footer .col-btn:not(:first-child):not(:last-child) {
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+}
+
+.footer .col-btn:first-child:not(:last-child) {
+    padding-right: 7px !important;
+}
+
+.footer .col-btn:last-child:not(:first-child) {
+    padding-left: 7px !important;
+}
+
+.footer .btn {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+a:focus {
+    outline: none;
+}
+
+a.list-group-item:focus,
+a.list-group-item:hover,
+button.list-group-item:focus,
+button.list-group-item:hover {
+    background: #fff;
+}
+
+.navbar {
+    margin-bottom: 0;
+    min-height: 0;
+}
+
+.navbar-brand a {
+    color: #34495e;
+    text-decoration: none;
+}
+
+.progress {
+    background-color: #f5f5f5;
+    height: 1.2em;
+    border-radius: .2em;
+    line-height: 1.2em;
+    @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, .1));
+}
+
+.progress-bar {
+    font-size: .7em;
+    line-height: inherit;
+    @include box-shadow(inset 0 -1px 0 rgba(0, 0, 0, .15));
+    @include transition(none);
+}
+
+h1, .h1 {
+    font-size: 2.2em;
+}
+
+h2, .h2 {
+    font-size: 2em;
+}
+
+h3, .h3 {
+    font-size: 1.8em;
+}
+
+h4, .h4 {
+    font-size: 1.6em;
+}
+
+h5, .h5 {
+    font-size: 1.4em;
+}
+
+h6, .h6 {
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.1;
+    min-height: 1.1em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.panel {
+    border-radius: .3em;
+}
+
+.panel-body {
+    padding: 1em;
+}
+
+.list-group-item {
+    padding: 1em;
+}
+
+.list-group-item:first-child {
+    @include border-top-left-radius(.3em);
+    @include border-top-right-radius(.3em);
+}
+
+.list-group-item:last-child {
+    @include border-bottom-right-radius(.3em);
+    @include border-bottom-left-radius(.3em);
+}
+
+.list-group-item:active,
+a.list-group-item:active {
+    background-color: #f4f4f4;
+}
+
+.container {
+    padding-left: 1em;
+    padding-right: 1em;
+    min-width: 300px;
+}
+
+.img-thumbnail {
+    padding: .3em;
+}
+
+.badge {
+    font-size: .8em;
+    padding: .1em .3em;
+    @include border-radius(.4em);
+    @include min-width(1em);
+}
+
+.panel-heading {
+    padding: 1em;
+}
+
+.panel-title {
+    font-size: 1em;
+}
+
+.popover {
+    font-size: 1em;
+}
+
+.modal-body, .modal-footer {
+    padding: 1em;
+}
+
+th {
+    text-align: center;
+}
+
+.nav-tabs>li>a {
+    margin-right: 0;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: none;
+}
