@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>聊天界面</title>
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="chat-bg">
+<header class="header-title">在线教育聊天机器人</header>
+<section class="chat-box">
+    <span class="chat-trip">此刻对方忙碌，请留言</span>
+    <div class="bubbleDiv"></div>
+</section>
+<footer class="chat-edit clearfix">
+    <a name="end" ></a>
+    <p class="chat-info" placeholder="想咨询他什么内容..." contenteditable="true"></p>
+    <span class="uploadImg fl"><input type="file" name="uploadfile" class="uploadfile"></span>
+    <button class="send-btn fr">发送</button>
+</footer>
+
+<!--<script src="js/jquery-1.8.3.min.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script src="js/chat.js"></script>
+<script>
+    function api_call(input) {
+        /*
+         调用chatbot的api
+         */
+        $.ajax({
+            url: "http://0.0.0.0:5000/api",
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(input),
+            success: function (data, textStatus, jQxhr) {
+                console.log(data);
+                chat("leftBubble", "images/robot.png", data.reply_sen);
+            },
+            error: function (jqXhr, textStatus, errorThrown) {
+                $('#api_output').html("There was an error");
+                console.log(errorThrown);
+            },
+            timeout: 3000
+        });
+    }
+    $(document).ready(function(){
+        /*
+         左侧 接收别人信息 调用，三个参数：leftBubble，头像路径，内容
+         chat(element,imgSrc,doctextContent)
+         */
+        chat("leftBubble","images/robot.png","您好，我是机器人小通，欢迎提问！");
+
+        $(".send-btn").click(function(){
+            //右侧 自己发 调用，只需填一个参数"rightBubble"
+            chat("rightBubble");
+
+            //调用api
+            var input = $('.chat-info');
+            console.log(input.html());
+            api_call({"question": input.html()});
+
+            //清空输入框
+            input.html('');
+
+            // //滚动到底部
+            // var chat_box = $("#bubbleDiv");
+            // chat_box.animate({
+            //     scrollTop: chat_box.height()
+            // }, 1000);
+
+        })
+    })
+</script>
+</body>
+</html>
