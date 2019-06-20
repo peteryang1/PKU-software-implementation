@@ -1,0 +1,263 @@
+﻿@import "compass";
+
+.btn,
+button {
+    @include text-shadow(none);
+    font-size: inherit;
+    border: medium none;
+    @include border-radius(.3em);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    @include transition(all .2s ease-in-out);
+}
+
+.btn:active,
+button:active {
+    @include transform(scale(.95));
+}
+
+.btn.disabled,
+.btn[disabled] {
+    background-color: #aaa !important;
+    @include opacity(1);
+    pointer-events: none;
+    cursor: default !important;
+}
+
+.btn:hover,
+.btn:focus {
+    outline: 0 none;
+}
+
+.btn:focus:active {
+    outline: 0 none;
+}
+
+.btn-embossed {
+    box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15) inset;
+}
+
+.btn-embossed.active,
+.btn-embossed:active {
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15) inset;
+}
+
+.btn-lg,
+.btn-lg,
+.btn-group-lg > .btn {
+    font-size: 1.2em !important;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.btn-default.active,
+.btn-default:active,
+.open > .dropdown-toggle.btn-default {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.btn-default:active.focus,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.open > .dropdown-toggle.btn-default.focus,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default:hover {
+    color: #333;
+    background-color: #d4d4d4;
+    border-color: #8c8c8c;
+}
+
+.btn-primary {
+    background-color: #1eba59; 
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary.hover,
+.btn-primary:focus {
+    background-color: #1eba59;
+    color: #fff;
+}
+
+.btn-primary.disabled,
+.btn-primary.disabled.active,
+.btn-primary.disabled.focus,
+.btn-primary.disabled:active,
+.btn-primary.disabled:focus,
+.btn-primary.disabled:hover,
+.btn-primary[disabled],
+.btn-primary[disabled].active,
+.btn-primary[disabled].focus,
+.btn-primary[disabled]:active,
+.btn-primary[disabled]:focus,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary,
+fieldset[disabled] .btn-primary.active,
+fieldset[disabled] .btn-primary.focus,
+fieldset[disabled] .btn-primary:active,
+fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-primary:hover {
+    background-color: #aaa;
+}
+
+.btn-primary .badge {
+    background-color: #fff;
+    color: #1eba59;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.btn-success:hover,
+.btn-success.hover,
+.btn-success:focus {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+    background: #27ad60;
+    border-color: #27ad60;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-danger:hover,
+.btn-danger.hover,
+.btn-danger:focus {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-danger:active,
+.btn-danger.active,
+.open > .dropdown-toggle.btn-danger {
+    background-color: #ac2925;
+    border-color: #761c19;
+}
+
+.btn-info {
+    background-color: #5bc0de;
+    color: #fff;
+}
+
+.btn-info:focus,
+.btn-info.focus,
+.btn-info:hover {
+    background-color: #5bc0de;
+    color: #fff;
+}
+
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+    background-color: #269abc;
+    border-color: #1b6d85;
+}
+
+.btn-icon-left,
+.btn-icon-right {
+    overflow: hidden;
+    @include ellipsis;
+    position: relative;
+    @include word-break(keep-all);
+}
+
+.btn-icon-left > .icon,
+.btn-icon-right > .icon {
+    position: absolute;
+}
+
+.btn-icon-left > .icon {
+    left: 10%;
+}
+
+.btn-icon-right > .icon {
+    right: 10%;
+}
+
+.btn-green {
+    color: #fff;
+    background-color: #7eb530;
+}
+
+.btn-green:active {
+    background-color: #7eb530;
+}
+
+.btn.btn-rounded {
+    @include border-radius(2em);
+}
+
+.btn.btn-blue,
+.btn.btn-blue:active,
+.btn.btn-blue:focus {
+    color: #fff;
+    background-color: $default-green;
+}
+
+.speak .btn-blue {
+    padding: 1em;
+}
+/* TODO: remove this class */
+.btn-blue-carved,
+.btn-blue-carved:focus {
+    color: $default-green;
+    border: solid .15em $default-green;
+    background-color: transparent;
+    @include border-radius(2em);
+}
+
+.btn-carved,
+.btn-carved:focus {
+    color: $default-text-color;
+    border: solid 1px $default-text-color;
+    background-color: transparent;
+}
+
+.btn-blue-carved:active {
+    color: #fff;
+    border-color: transparent;
+    background-color: #1caff6;
+    @include box-shadow(none);
+}
+
+.btn-blue-carved[disabled] {
+    border-color: #888;
+    color: #888;
+    background-color: #ddd;
+    @include opacity(.4);
+}
+
+.btn.btn-fat {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.btn.btn-circle {
+    text-align: center;
+    border-radius: 100%;
+}

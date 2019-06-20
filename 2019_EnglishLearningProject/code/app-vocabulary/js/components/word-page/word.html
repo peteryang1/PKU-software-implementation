@@ -1,0 +1,134 @@
+﻿<div class="navbar navbar-gray navbar-fixed-top navbar-mobile">
+    <div class="navbar-header container">
+        <div class="navbar-btn-left-col">
+            <a class="btn btn-default navbar-btn" onclick="history.back()">
+            <span class="icon icon-chevron-left" style="color: #2AB85D;"></span></a>
+        </div>
+        <div class="navbar-mid-col">
+            <div class="vocab-progress-alert">
+                <div class="progress">
+                    <div class="progress-bar vocab-familiar-learnt" data-bind="attr: { style: 'width: ' + learnedCount() / unitCount() * 100 + '%' }"></div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-btn-right-col">
+            <div class="navbar-percent">
+                <span data-bind="text: learnedCount()"></span>/
+                <span data-bind="text: unitCount()"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page with-header vocab-page active">
+    <!-- ko if: currentWord() -->
+    <div class="vocab-content">
+        <div class="word-card">
+
+            <div class="vocab-w" data-bind="html:currentWord().word.text()"></div>
+            <div class="display">
+                <!--ko component: {
+                name: 'audio-controller',
+                params: {
+                    src:  $component.audioUrl(),
+                    onReady: $component.onPronReady
+                }
+            }--> 
+<div class= "audio-btn" data-bind="audioController: true">
+    <span class="icon icon-audio"></span>
+</div>
+<!-- /ko -->
+            </div>
+
+            <div data-bind="visible: state() === 'unfamiliar'">
+                <div class="vocab-row vocab-sentence-panel">
+                    <div class="vocab-row-heading">
+                        <span class="vocab-row-title">例句</span>
+                    </div>
+                    <div class="vocab-row-body">
+                        <div class="vocab-sents">
+                            <div class="vocab-sents-en" data-bind="text: sentence()"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-bind="visible: state() === 'details'">
+                <div class="vocab-row vocab-sentence-panel">
+                    <div class="vocab-row-heading">
+                        <span class="vocab-row-title">释义</span>
+                    </div>
+                    <div class="vocab-row-body">
+                        <div class="vocab-sents">
+                            <div class="vocab-sents-en" data-bind="text: currentWord().word.nativeText()"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vocab-row vocab-sentence-panel">
+                    <div class="vocab-row-heading">
+                        <span class="vocab-row-title">例句</span>
+                    </div>
+                    <div class="vocab-row-body">
+                        <div class="vocab-sents">
+                            <div class="vocab-sents-en" data-bind="text: detailsSentence()"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vocab-row vocab-sentence-panel">
+                    <div class="vocab-row-heading">
+                        <span class="vocab-row-title">图片</span>
+                        
+                    </div>
+                    <div class="vocab-row-body vocab-row-picture">
+                        <img class="vocab-picture" data-bind="attr: {src: currentWord().word.image()}" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- /ko -->
+</div>
+
+<!-- ko template: { name: footerTemplate }--><!-- /ko -->
+
+<script type="text/html" id="footer-init">
+    <footer class="footer footer-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-btn">
+                    <button id="vocab-btn-unfamiliar" class="btn-block btn btn-rounded btn-fat btn-vocared" data-bind="click: chooseUnfamiliar">不认识</button>
+                </div>
+                <div class="col-xs-6 col-btn">
+                    <button id="vocab-btn-familiar" class="btn-block btn btn-rounded btn-fat btn-vocagreen" data-bind="click: chooseFamiliar">认识</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</script>
+
+<script type="text/html" id="footer-unfamiliar">
+    <footer class="footer footer-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-btn">
+                    <button class="btn-block btn btn-rounded btn-fat btn-vocared" data-bind="click: chooseNotRemembered">没想起来</button>
+                </div>
+                <div class="col-xs-6 col-btn">
+                    <button class="btn-block btn btn-rounded btn-fat btn-vocagreen" data-bind="click: chooseFamiliar">想起来了</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</script>
+
+
+<script type="text/html" id="footer-details">
+    <footer class="footer footer-gray">
+        <div class="container">
+            <a class="btn btn-block btn-rounded btn-fat btn-blue  btn-icon-right" data-bind="click: nextWord">下一个</a>
+        </div>
+    </footer>
+</script>

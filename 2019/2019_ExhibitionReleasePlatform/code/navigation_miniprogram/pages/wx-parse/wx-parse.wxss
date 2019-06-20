@@ -1,0 +1,2 @@
+/* pages/wx-parse/wx-parse.wxss */
+@import "../../wxParse/wxParse.wxss";

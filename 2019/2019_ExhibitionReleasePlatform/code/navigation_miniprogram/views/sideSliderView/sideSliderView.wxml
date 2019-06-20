@@ -1,0 +1,10 @@
+<view class="page-slidebar">
+  <scroll-view scroll-y class="side-scroll-view">
+    <view class="categoryList" wx:for="{{categoryList}}" wx:for-index="key" wx:key="unique">
+      <text class='wxSearchTitle'>{{key}}</text>
+      <view class="wxSearchKeyList">
+        <text class="{{item.selected?'wxSearchKeyItem-select':'wxSearchKeyItem'}}" data-key="{{key}}" data-value="{{item.value}}" wx:for="{{item}}" bindtap="tapCat" wx:key="unique">{{item.value}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

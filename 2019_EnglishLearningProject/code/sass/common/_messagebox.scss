@@ -1,0 +1,41 @@
+﻿@import "compass";
+
+#messagebox-modal {
+    z-index: 10000;
+
+    .modal-dialog {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin:30px;
+
+        .modal-content.vertical-center {
+            position: absolute;
+            width: 100%;
+            .modal-footer{
+                border:none;
+                .quit-btn,.quit-alert {
+                    background-color: #fff;
+                    color: #58b764;
+                }
+
+                .quit-cancel {
+                    background-color: #fff;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+.modal-backdrop {
+    z-index: 9999;
+}
+
+.modal-body {
+    white-space: pre-line;
+    text-align: center;
+    line-height: 2em;
+}

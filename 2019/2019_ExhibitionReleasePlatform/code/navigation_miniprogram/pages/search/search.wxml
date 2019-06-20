@@ -1,0 +1,33 @@
+<!--pages/search/search.wxml-->
+
+<view class="bookCity">
+
+<!--
+<view class="search">
+    <icon type="search" size="22" class="22"></icon>
+    <input type="search" confirm-type="search" bindconfirm="onConfirm" />
+</view>
+-->
+
+  <view class="findBox">
+    <image src="../../images/find.svg" />
+    <input class="findInput" type="search" placeholder='输入会展名' confirm-type="search" bindconfirm="onConfirm"/>
+  </view>
+
+
+<view class="likeBookList">
+  <view class="likeLi" wx:for="{{results}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap='toBookAbstract'>
+    <image class="likeImg" src="{{urlImg+item.project_image_name}}" />
+    <view class="likeLiRight">
+      <view class="likeBookTitle">{{item.project_name}}</view>
+      <view class="likeBookAuthor">{{item.project_location}}</view>
+    </view>
+  </view>
+</view>
+
+<!--
+<button class="recordBtn" bindtap='myRecordSpeechFunction'>长按说话</button>
+-->
+
+
+</view>

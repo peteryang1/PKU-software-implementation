@@ -1,0 +1,17 @@
+﻿<div id="messagebox-modal" class="modal fade" role="dialog" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content vertical-center">
+            <div class="modal-body" data-bind="text: msg">
+            </div>
+            <div class="modal-footer col-xs-12">
+                <!-- ko if: type() == 'confirm' -->
+                <button id="btn-confirm" type="button" class="btn quit-btn col-xs-offset-2 col-xs-4" data-bind="click: chooseYes, text: yesText"></button>
+                <button type="button" class="btn quit-cancel col-xs-offset-1 col-xs-4" data-dismiss="modal" data-bind="click: chooseNo, text: noText"></button>
+                <!-- /ko -->
+                <!-- ko if: type() == 'alert' -->
+                <button id="btn-confirm" type="button" class="btn col-xs-12 quit-alert" data-dismiss="modal" data-bind="click: chooseNo">确认</button>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+/* pages/allExhibitions/allExhibitions.wxss */
+
+@import "../../pages/freeBooks/freeBooks";

@@ -1,0 +1,81 @@
+<!--pages/index/index.wxml-->
+<view class="find">
+  <swiper current="{{swiperIndex}}" class='swiperClass' interval="3000" circular="{{true}}" duration="600" previous-margin="100rpx" next-margin="100rpx" bindchange="bindchange">
+
+  <!--
+    <swiper-item class="updateLiBox">
+      <view class="updateLi">
+          <image data-id="{{bannerOne.id}}" class="findImg" src="{{urlImg + bannerOne.bookImg}}" bindtap='toBook' />
+          <view class="bookName">{{bannerOne.project_name}}</view>
+          <view class="bookAuthor">{{bannerOne.project_time1}}</view>
+          <view class="readCount">200人在读</view>
+      </view>
+    </swiper-item>
+  -->
+    
+    <swiper-item class="updateLiBox">
+      <view class="updateLi freeBox">
+        <view class="freeHead">文化节</view>
+        <view class="freeBody">
+          <view class="freeLi" data-id="{{item.id}}" wx:for="{{bannerOne}}" wx:key="{{item.id}}"  bindtap='toBook'>
+            <image mode="aspectFill" class="freeBoxImg" src="{{urlImg + item.project_image_name}}" />
+            <view class="ferrBoxTitle">{{item.project_name}}</view>
+          </view>
+        </view>
+        <view class="lookMoreFree" bindtap='toAllCultures'>查看全部文化节</view>
+      </view>
+    </swiper-item>
+
+    <swiper-item class="updateLiBox">
+      <view class="updateLi freeBox">
+        <view class="freeHead">博览会</view>
+        <view class="freeBody">
+          <view class="freeLi" data-id="{{item.id}}" wx:for="{{bannerTwo}}" wx:key="{{item.id}}"  bindtap='toBook'>
+            <image mode="aspectFill" class="freeBoxImg" src="{{urlImg + item.project_image_name}}" />
+            <view class="ferrBoxTitle">{{item.project_name}}</view>
+          </view>
+        </view>
+        <view class="lookMoreFree" bindtap='toAllExhibitions'>查看全部博览会</view>
+      </view>
+    </swiper-item>
+
+    <swiper-item class="updateLiBox">
+      <view class="updateLi freeBox">
+        <view class="freeHead">毕业展</view>
+        <view class="freeBody">
+          <view class="freeLi" data-id="{{item.id}}" wx:for="{{bannerThree}}" wx:key="{{item.id}}"  bindtap='toBook'>
+            <image mode="aspectFill" class="freeBoxImg" src="{{urlImg + item.project_image_name}}" />
+            <view class="ferrBoxTitle">{{item.project_name}}</view>
+          </view>
+        </view>
+        <view class="lookMoreFree" bindtap='toAllGraduations'>查看全部毕业展</view>
+      </view>
+    </swiper-item>
+    
+<!--
+    <swiper-item class="updateLiBox">
+      <view class="updateLi">
+        <view class="githubTitle">github地址</view>
+        <view class="githubBody">
+          <view class="gitLi">
+            <view class="liTitle">前端</view>
+            <view class="githubAddress">https://github.com/xml123/books</view>
+          </view>
+          <view class="gitLi">
+            <view class="liTitle">后端</view>
+            <view class="githubAddress">https://github.com/xml123/books_api</view>
+          </view>
+          <view class="gitLi">
+            <view class="liTitle">python爬虫</view>
+            <view class="githubAddress">https://github.com/xml123/books_spider</view>
+          </view>
+        </view>
+        <view class="authorName">开发者：bright</view>
+        <view class="star">(可以的话，请在github上留下你的小星星，谢谢)</view>
+      </view>
+    </swiper-item>
+-->
+
+  </swiper>
+
+</view>
