@@ -1,0 +1,159 @@
+﻿<Page
+    x:Class="App5.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App5"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--app top bar-->
+        <RelativePanel Background="{ThemeResource AppBarBackgroundThemeBrush}">
+            <Button Name="HamburgerButton"
+                    RelativePanel.AlignLeftWithPanel="True"
+                    Click="HamburgerButton_Click"
+                    FontFamily="Segoe MDL2 Assets"
+                    Content="&#xE700;"
+                    Width="44"
+                    Height="44"/>
+            <TextBlock Margin="20,0,0,0"
+                       Name="TitleBlock"
+                       Text="推荐"
+                       RelativePanel.RightOf="HamburgerButton"
+                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
+
+            <AutoSuggestBox Name="SearchBox"
+                            Margin="20, 0, 20, 0"
+                            PlaceholderText="Search" 
+                            QueryIcon="Find"
+                            Width="200"
+                            RelativePanel.AlignRightWithPanel="True"
+                            RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            <Button Name="RefreshButton" 
+                    FontFamily="Segoe MDL2 Assets"
+                    Height="44"
+                    Background="Transparent"
+                    Content="&#xE72C;" 
+                    RelativePanel.LeftOf="SearchBox"
+                    RelativePanel.AlignVerticalCenterWithPanel="True"
+                    Click="RefreshButton_Click"/>
+            <Button Name="UploadWork"
+                    FontFamily="Segoe MDL2 Assets"
+                    Height="44"
+                    Background="Transparent"
+                    Content="&#xE898;"
+                    RelativePanel.AlignVerticalCenterWithPanel="True"
+                    Click="UploadWork_Click"
+                    RelativePanel.LeftOf="RefreshButton" />
+        </RelativePanel>
+
+        <!--Hamburger navigation-->
+        <SplitView Name="AppOptionsView"
+                   Grid.Row="1"
+                   OpenPaneLength="150"
+                   CompactPaneLength="44"
+                   HorizontalAlignment="Left"
+                   DisplayMode="CompactInline">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <ListBox Grid.Row="0" 
+                             Name="AppOptionsBox"
+                             SelectionMode="Single"
+                             SelectionChanged="AppOptionsBox_SelectionChanged">
+                        <ListBoxItem Name="HomeItem" Height="48">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Home"
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                <TextBlock Margin="20,0,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="推荐" />
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        <ListBoxItem Name="MessageItem" Height="48">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Message" 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                <TextBlock Margin="20,0,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="消息" />
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        <ListBoxItem Name="CollectionsItem" Height="48">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Favorite" 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                <TextBlock Margin="20,0,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="收藏夹" />
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        
+
+                        <!--<ListBoxItem Name="FeedbackItem" Height="48">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Emoji" 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                <TextBlock Margin="20,0,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="发送反馈" />
+                            </StackPanel>
+                        </ListBoxItem>-->
+                    </ListBox>
+
+                    <ListBox Grid.Row="2" 
+                             Name="OtherOptionsBox"
+                             SelectionMode="Single"
+                             SelectionChanged="OtherOptionsBox_SelectionChanged">
+                        <ListBoxItem Name="ProfileItem" Height="48">
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="ContactInfo"
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                <TextBlock Margin="20,0,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="个人中心" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="SettingItem" Height="48" >
+                            <StackPanel Orientation="Horizontal" >
+                                <SymbolIcon Symbol="Setting" 
+                                            HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                                <TextBlock Margin="20,0,0,0"
+                                           VerticalAlignment="Center"
+                                           Text="设置" />
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </Grid>
+            </SplitView.Pane>
+
+            <!--main page frame-->
+            <SplitView.Content>
+                <Frame Name="PreFrame">
+
+                </Frame>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>
