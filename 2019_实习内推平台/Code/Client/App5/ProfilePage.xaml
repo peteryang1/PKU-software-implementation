@@ -1,0 +1,83 @@
+﻿<Page
+    x:Class="App5.ProfilePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App5"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="using:App5.Models"
+    xmlns:data="using:App5.ViewModels"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <md:GetProfileModel x:Name="ViewModel" />
+    </Page.DataContext>
+    <Grid>
+        <Pivot Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+            <!--<Pivot.TitleTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="个人中心" Style="{ThemeResource HeaderTextBlockStyle}" />
+                    </Grid>
+                </DataTemplate>
+            </Pivot.TitleTemplate>-->
+
+            <PivotItem Header="个人信息" Margin="0">
+                <!--Form Example-->
+                <Grid Background="{ThemeResource ContentDialogDimmingThemeBrush}">
+                    <RelativePanel>
+                        <StackPanel x:Name="Customer" Margin="20">
+                            <TextBox x:Name="CustomerName" Header= "姓名" Margin="0,24,0,0" MaxLength="320" Width="400" HorizontalAlignment="Left" InputScope="PersonalFullName"/>
+                            <TextBox x:Name="CustomerPhoneNumber" Header="联系电话" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="TelephoneNumber" />
+                            <TextBox x:Name="Address" Header="通信地址"  Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="AlphanumericFullWidth" />
+                            <TextBox x:Name="AssociateName" Header= "学历" Margin="0,24,0,0" MaxLength="320" Width="400" HorizontalAlignment="Left" InputScope="PersonalFullName"/>
+                            <RelativePanel>
+                                <TextBox x:Name="City" PlaceholderText="学校" Margin="0,24,0,0" MaxLength="50" Width="200" HorizontalAlignment="Left" InputScope="Text" />
+                                <ComboBox x:Name="State" PlaceholderText="请选择省份" Margin="24,24,0,0"  Width="120" RelativePanel.RightOf="City">
+                                    <x:String>WA</x:String>
+                                </ComboBox>
+                            </RelativePanel>
+                        </StackPanel>
+                        <StackPanel x:Name="Associate" Margin="20,42,0,0" RelativePanel.RightOf="Customer">
+                            <!--<DatePicker x:Name="TargetInstallDate" Header="Target install Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>-->
+                            <!--<TimePicker x:Name="InstallTime" Header="Install Time" HorizontalAlignment="Left" Margin="0,24,0,0"></TimePicker>-->
+
+                            <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                                <TextBox MinWidth="400" MinHeight="350"  TextWrapping="Wrap"  PlaceholderText="个人描述"/>
+                                <!-- more page content -->
+                            </StackPanel>
+                        </StackPanel>
+                    </RelativePanel>
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="我发布的" Margin="0">
+                <ListView ItemsSource="{x:Bind publish}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:Name="DoubleLineDataTemplate" x:DataType="md:Resume">
+                            <StackPanel Orientation="Horizontal" Height="64">
+                                <Ellipse Height="48" Width="48" VerticalAlignment="Center">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{x:Bind Cover}"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="12,0,0,0">
+                                    <TextBlock Text="{x:Bind Title}"  Style="{ThemeResource BaseTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" />
+                                    <TextBlock Text="{x:Bind Company}" Style="{ThemeResource BodyTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+
+            <Pivot.RightHeader>
+                <CommandBar OverflowButtonVisibility="Collapsed" Background="Transparent">
+                    <AppBarButton Icon="Edit" />
+                    <AppBarSeparator/>
+                    <AppBarButton Icon="Save"/>
+                </CommandBar>
+            </Pivot.RightHeader>
+        </Pivot>
+    </Grid>
+</Page>
