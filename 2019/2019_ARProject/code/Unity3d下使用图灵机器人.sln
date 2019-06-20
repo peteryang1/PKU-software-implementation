@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity3d下使用图灵机器人", "Assembly-CSharp.csproj", "{D90857EE-6D3B-A365-F9F6-077267B36D2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity3d下使用图灵机器人", "Assembly-CSharp-Editor.csproj", "{B942E651-4B6A-4981-1EE9-B6076383127C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D90857EE-6D3B-A365-F9F6-077267B36D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D90857EE-6D3B-A365-F9F6-077267B36D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D90857EE-6D3B-A365-F9F6-077267B36D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D90857EE-6D3B-A365-F9F6-077267B36D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B942E651-4B6A-4981-1EE9-B6076383127C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B942E651-4B6A-4981-1EE9-B6076383127C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B942E651-4B6A-4981-1EE9-B6076383127C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B942E651-4B6A-4981-1EE9-B6076383127C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
