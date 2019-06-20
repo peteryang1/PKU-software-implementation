@@ -1,0 +1,1 @@
+<?php  header("location:http://152.136.94.12/public/home") ?> 
